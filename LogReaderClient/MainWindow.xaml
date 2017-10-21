@@ -1,0 +1,30 @@
+﻿<Window x:Class="LogReaderClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LogReaderClient"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="401.501" Width="1150.516">
+    <Grid Margin="0,0,-8,-9">
+        <ListView x:Name="listView" HorizontalAlignment="Stretch" Height="303" Margin="24,46,41,0" VerticalAlignment="Top">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn x:Name="Column1"    DisplayMemberBinding="{Binding time}" Header="Tid" Width="115"/>
+                    <GridViewColumn x:Name="Column2"    DisplayMemberBinding="{Binding ID}" Header="ID" Width="60"/>
+                    <GridViewColumn x:Name="Column3"    DisplayMemberBinding="{Binding alarm}" Header="Alarm" Width="100"/>
+                    <GridViewColumn x:Name="Column4"    DisplayMemberBinding="{Binding name}" Header="Navn" Width="150"/>
+                    <GridViewColumn x:Name="Column5"    DisplayMemberBinding="{Binding department}" Header="Afdeling" Width="100"/>
+                    <GridViewColumn x:Name="Column6"    DisplayMemberBinding="{Binding residence}" Header="Bolig" Width="100"/>
+                    <GridViewColumn x:Name="Column7"    DisplayMemberBinding="{Binding location}" Header="Lokation" Width="100"/>
+                    <GridViewColumn x:Name="Column8"    DisplayMemberBinding="{Binding resetTime}" Header="Afmeldt" Width="115"/>
+                    <GridViewColumn x:Name="Column9"    DisplayMemberBinding="{Binding personnel}" Header="Personale" Width="80"/>
+                    <GridViewColumn x:Name="Column10"   DisplayMemberBinding="{Binding callTo}" Header="Opkald til" Width="60"/>
+                    <GridViewColumn x:Name="Column11"   DisplayMemberBinding="{Binding groupCall}" Header="Gruppekald" Width="70"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="fetchlog" Content="Hent Data" HorizontalAlignment="Left" Margin="24,10,0,0" VerticalAlignment="Top" Width="75" Click="fetchlog_Click"/>
+        <TextBlock x:Name="connectionErrorTextBlock" HorizontalAlignment="Left" Margin="113,12,0,0" TextWrapping="Wrap" Text="Couldn't connect to the Web API" VerticalAlignment="Top" Visibility="Hidden"/>
+    </Grid>
+</Window>
